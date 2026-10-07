@@ -4,7 +4,10 @@ Skill Alexa privata in italiano che risponde alla domanda "cos'ha mangiato oggi 
 con il menu della mensa del giorno, per esempio:
 
 > Oggi è mercoledì della settimana due e Figlio ha mangiato: Primo piatto: Pasta pomodoro e
-> basilico - Secondo piatto: Piselli brasati - Contorno: Carote all'olio
+> basilico - Secondo piatto: Piselli brasati - Contorno: Carote all'olio. Domani, giovedì,
+> mangerà: Primo piatto: Pasta al pesto genovese - Secondo piatto: Crescenza - Contorno: Fagiolini all'olio.
+
+- Da lunedì a giovedì dice anche il menu di domani; il venerdì no (non anticipa il lunedì).
 
 - Menu a ciclo di **4 settimane**, da lunedì a venerdì. Sabato e domenica: "Oggi è sabato, non c'è scuola."
 - La settimana corrente si calcola da una data di riferimento (ancora): ogni lunedì si passa alla
