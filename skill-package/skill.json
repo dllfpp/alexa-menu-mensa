@@ -1,0 +1,33 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "it-IT": {
+          "name": "Menu Mensa",
+          "summary": "Il menu della mensa scolastica di oggi",
+          "description": "Dice cosa c'era oggi a pranzo a scuola: primo, secondo e contorno.",
+          "examplePhrases": [
+            "Alexa, apri menu figlio",
+            "Alexa, chiedi a menu figlio cos'ha mangiato oggi",
+            "Alexa, chiedi a menu figlio che cosa c'era di menu oggi"
+          ],
+          "keywords": ["mensa", "scuola", "menu"]
+        }
+      },
+      "isAvailableWorldwide": false,
+      "distributionCountries": ["IT"],
+      "testingInstructions": "Uso privato.",
+      "category": "EDUCATION_AND_REFERENCE"
+    },
+    "apis": { "custom": {} },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "usesPersonalInfo": false,
+      "isChildDirected": false,
+      "isExportCompliant": true,
+      "containsAds": false,
+      "locales": { "it-IT": {} }
+    }
+  }
+}

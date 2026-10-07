@@ -1,0 +1,47 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "menu figlio",
+      "intents": [
+        {
+          "name": "MenuOggiIntent",
+          "slots": [],
+          "samples": [
+            "cos'ha mangiato oggi figlio",
+            "cosa ha mangiato oggi figlio",
+            "che cosa ha mangiato oggi figlio",
+            "cos'ha mangiato figlio oggi",
+            "cosa ha mangiato figlio a scuola",
+            "cos'ha mangiato oggi figlio a scuola",
+            "cosa ha mangiato oggi figlio a scuola",
+            "che cosa ha mangiato figlio oggi a scuola",
+            "cosa ha mangiato oggi",
+            "cos'ha mangiato oggi",
+            "che cosa c'era di menu oggi a scuola",
+            "che cosa c'era di menu oggi",
+            "cosa c'era di menu oggi",
+            "cosa c'era oggi a pranzo",
+            "cosa c'era oggi in mensa",
+            "che cosa c'era oggi in mensa",
+            "qual era il menu di oggi",
+            "qual è il menu di oggi",
+            "il menu di oggi",
+            "il menu",
+            "menu di oggi",
+            "cosa c'è oggi in mensa",
+            "cosa si mangia oggi a scuola",
+            "cosa hanno mangiato oggi a scuola",
+            "cosa c'era da mangiare oggi a scuola",
+            "che cosa c'era da mangiare oggi"
+          ]
+        },
+        { "name": "AMAZON.CancelIntent", "samples": [] },
+        { "name": "AMAZON.HelpIntent", "samples": [] },
+        { "name": "AMAZON.StopIntent", "samples": [] },
+        { "name": "AMAZON.NavigateHomeIntent", "samples": [] },
+        { "name": "AMAZON.FallbackIntent", "samples": [] }
+      ],
+      "types": []
+    }
+  }
+}
