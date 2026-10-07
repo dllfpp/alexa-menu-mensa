@@ -43,9 +43,9 @@ Tutto si cambia in due file.
 
 **`skill-package/interactionModels/custom/it-IT.json`**
 
-- `invocationName`: il nome con cui chiami la skill (ora `menu figlio`). Regole Amazon: tutto
+- `invocationName`: il nome con cui chiami la skill (ora `menu mensa`). Regole Amazon: tutto
   minuscolo; un nome di **due** parole non può contenere articoli o preposizioni ("di", "a", "la"…).
-  Un nome senza preposizioni (es. `menu figlio`) viene riconosciuto meglio.
+  Un nome senza preposizioni (es. `menu mensa`) viene riconosciuto meglio.
 - `samples`: le frasi che dici **dopo** il nome della skill. Se cambi il nome del bambino,
   cambialo anche qui.
 
@@ -74,7 +74,7 @@ date attese in `test.js`.
    `skill-package/interactionModels/custom/it-IT.json`.
 3. Clicca **Save**, poi **Build skill**. Aspetta circa un minuto il messaggio **Build Successful**.
 4. Controlla in **Invocations → Skill Invocation Name** che il nome sia quello giusto
-   (`menu figlio`).
+   (`menu mensa`).
 
 ## 4. Carica il codice
 
@@ -92,14 +92,14 @@ date attese in `test.js`.
 1. Apri la scheda **Test**.
 2. In alto, **Skill testing is enabled in**: scegli **Development**. Deve restare così: finché è su
    Development la skill è attiva sul tuo account, senza scadenza.
-3. Nel simulatore scrivi (senza "Alexa"): `apri menu figlio` oppure
-   `chiedi a menu figlio cosa ha mangiato oggi`.
+3. Nel simulatore scrivi (senza "Alexa"): `apri menu mensa` oppure
+   `chiedi a menu mensa cosa ha mangiato oggi`.
 4. Deve rispondere con il menu di oggi. Nel pannello **JSON Input** compare la richiesta.
 
 Da questo momento funziona su tutti gli Echo dell'account:
 
-- "Alexa, apri menu figlio"
-- "Alexa, chiedi a menu figlio cos'ha mangiato oggi"
+- "Alexa, apri menu mensa"
+- "Alexa, chiedi a menu mensa cos'ha mangiato oggi"
 
 ## 6. Frase corta senza nome della skill (routine)
 
@@ -109,7 +109,7 @@ Figlio" serve una routine nell'app Alexa sul telefono:
 1. **Altro → Routine → +**.
 2. Nome: `Mensa`.
 3. **Quando succede questo → Voce**: scrivi `cos'ha mangiato oggi figlio` (senza "Alexa").
-4. **Aggiungi azione → Personalizzata**: scrivi `chiedi a menu figlio cos'ha mangiato oggi`.
+4. **Aggiungi azione → Personalizzata**: scrivi `chiedi a menu mensa cos'ha mangiato oggi`.
 5. Se chiede da quale dispositivo rispondere: **Il dispositivo con cui parli**.
 6. **Salva**.
 
@@ -136,9 +136,9 @@ Se invece cambi `it-IT.json` (nome o frasi), rifai il punto 3 (Save + Build skil
 
 | Sintomo | Causa | Soluzione |
 |---|---|---|
-| "Purtroppo non so come aiutarti" e **JSON Input vuoto** | Alexa non ha riconosciuto il nome: la skill non è stata chiamata | Controlla il nome in Invocations, rifai **Build skill**, ricarica la pagina (F5), prova `apri menu figlio` |
+| "Purtroppo non so come aiutarti" e **JSON Input vuoto** | Alexa non ha riconosciuto il nome: la skill non è stata chiamata | Controlla il nome in Invocations, rifai **Build skill**, ricarica la pagina (F5), prova `apri menu mensa` |
 | Funziona con "cos'ha…" ma non con "cosa ha…" | La routine accetta solo la frase esatta | Aggiungi la variante alla routine |
-| Nome di invocazione con "di" non riconosciuto | Le preposizioni rendono il nome meno affidabile | Usa un nome senza preposizioni, es. `menu figlio` |
+| Nome di invocazione con "di" non riconosciuto | Le preposizioni rendono il nome meno affidabile | Usa un nome senza preposizioni, es. `menu mensa` |
 | Menu della settimana sbagliata | Ancora errata, o la scuola ha riallineato il ciclo dopo le vacanze | Correggi `ANCHOR_MONDAY_UTC` / `ANCHOR_WEEK` in `menu.js` e rifai il Deploy |
 | "Si è verificato un problema con la risposta della skill" | Errore nel codice incollato | Scheda **Code → CloudWatch Logs** per l'errore; reincolla i file interi |
 

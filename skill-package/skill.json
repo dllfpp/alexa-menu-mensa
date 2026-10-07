@@ -7,9 +7,9 @@
           "summary": "Il menu della mensa scolastica di oggi",
           "description": "Dice cosa c'era oggi a pranzo a scuola: primo, secondo e contorno.",
           "examplePhrases": [
-            "Alexa, apri menu figlio",
-            "Alexa, chiedi a menu figlio cos'ha mangiato oggi",
-            "Alexa, chiedi a menu figlio che cosa c'era di menu oggi"
+            "Alexa, apri menu mensa",
+            "Alexa, chiedi a menu mensa cos'ha mangiato oggi",
+            "Alexa, chiedi a menu mensa che cosa c'era di menu oggi"
           ],
           "keywords": ["mensa", "scuola", "menu"]
         }

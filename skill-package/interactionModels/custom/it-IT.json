@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "menu figlio",
+      "invocationName": "menu mensa",
       "intents": [
         {
           "name": "MenuOggiIntent",
