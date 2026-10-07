@@ -60,13 +60,24 @@ function menuOf(dayUtc) {
   return { weekday, week, menu: MENU[week][weekday - 1] };
 }
 
-function speechFor(now = new Date()) {
-  const { weekday, week, menu } = menuOf(romeDate(now));
-  if (!menu) return `Oggi è ${GIORNI[weekday]}, non c'è scuola.`;
+function dishes(menu) {
   const parts = [`Primo piatto: ${menu.primo}`];
   if (menu.secondo) parts.push(`Secondo piatto: ${menu.secondo}`);
   parts.push(`Contorno: ${menu.contorno}`);
-  return `Oggi è ${GIORNI[weekday]} della settimana ${SETTIMANE[week]} e Figlio ha mangiato: ${parts.join(' - ')}`;
+  return parts.join(' - ');
+}
+
+// Oggi, più domani da lunedì a giovedì (il venerdì non anticipa il lunedì).
+function speechFor(now = new Date()) {
+  const today = romeDate(now);
+  const { weekday, week, menu } = menuOf(today);
+  if (!menu) return `Oggi è ${GIORNI[weekday]}, non c'è scuola.`;
+  let speech = `Oggi è ${GIORNI[weekday]} della settimana ${SETTIMANE[week]} e Figlio ha mangiato: ${dishes(menu)}.`;
+  if (weekday < 5) {
+    const tomorrow = menuOf(today + 24 * 60 * 60 * 1000);
+    speech += ` Domani, ${GIORNI[tomorrow.weekday]}, mangerà: ${dishes(tomorrow.menu)}.`;
+  }
+  return speech;
 }
 
 module.exports = { MENU, romeDate, menuOf, speechFor };
