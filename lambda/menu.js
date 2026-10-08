@@ -51,6 +51,13 @@ function romeDate(now = new Date()) {
   return Date.UTC(get('year'), get('month') - 1, get('day'));
 }
 
+// Ora del giorno a Roma (0-23).
+function romeHour(now = new Date()) {
+  return Number(new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Rome', hour: '2-digit', hourCycle: 'h23',
+  }).format(now));
+}
+
 function menuOf(dayUtc) {
   const weekday = new Date(dayUtc).getUTCDay(); // 0 = domenica
   if (weekday === 0 || weekday === 6) return { weekday, menu: null };
@@ -72,7 +79,9 @@ function speechFor(now = new Date()) {
   const today = romeDate(now);
   const { weekday, week, menu } = menuOf(today);
   if (!menu) return `Oggi è ${GIORNI[weekday]}, non c'è scuola.`;
-  let speech = `Oggi è ${GIORNI[weekday]} della settimana ${SETTIMANE[week]} e Figlio ha mangiato: ${dishes(menu)}.`;
+  // Prima di mezzogiorno il pranzo deve ancora arrivare.
+  const verb = romeHour(now) < 12 ? 'Figlio oggi a scuola mangerà' : 'oggi Figlio ha mangiato';
+  let speech = `Oggi è ${GIORNI[weekday]} della settimana ${SETTIMANE[week]} e ${verb}: ${dishes(menu)}.`;
   if (weekday < 5) {
     const tomorrow = menuOf(today + 24 * 60 * 60 * 1000);
     speech += ` Domani, ${GIORNI[tomorrow.weekday]}, mangerà: ${dishes(tomorrow.menu)}.`;
@@ -80,4 +89,4 @@ function speechFor(now = new Date()) {
   return speech;
 }
 
-module.exports = { MENU, romeDate, menuOf, speechFor };
+module.exports = { MENU, romeDate, romeHour, menuOf, speechFor };
