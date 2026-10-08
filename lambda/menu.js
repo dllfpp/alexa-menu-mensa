@@ -80,7 +80,7 @@ function speechFor(now = new Date()) {
   const { weekday, week, menu } = menuOf(today);
   if (!menu) return `Oggi è ${GIORNI[weekday]}, non c'è scuola.`;
   // Prima di mezzogiorno il pranzo deve ancora arrivare.
-  const verb = romeHour(now) < 12 ? 'Figlio oggi a scuola mangerà' : 'oggi Figlio ha mangiato';
+  const verb = romeHour(now) < 12 ? 'Figlio a scuola mangerà' : 'Figlio ha mangiato';
   let speech = `Oggi è ${GIORNI[weekday]} della settimana ${SETTIMANE[week]} e ${verb}: ${dishes(menu)}.`;
   if (weekday < 5) {
     const tomorrow = menuOf(today + 24 * 60 * 60 * 1000);

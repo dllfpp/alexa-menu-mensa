@@ -8,7 +8,7 @@ con il menu della mensa del giorno, per esempio:
 > mangerà: Primo piatto: Pasta al pesto genovese - Secondo piatto: Crescenza - Contorno: Fagiolini all'olio.
 
 - Da lunedì a giovedì dice anche il menu di domani; il venerdì no (non anticipa il lunedì).
-- Prima delle 12 (ora di Roma) dice "Figlio oggi a scuola mangerà", dalle 12 "oggi Figlio ha mangiato".
+- Prima delle 12 (ora di Roma) dice "Figlio a scuola mangerà", dalle 12 "Figlio ha mangiato".
 
 - Menu a ciclo di **4 settimane**, da lunedì a venerdì. Sabato e domenica: "Oggi è sabato, non c'è scuola."
 - La settimana corrente si calcola da una data di riferimento (ancora): ogni lunedì si passa alla
