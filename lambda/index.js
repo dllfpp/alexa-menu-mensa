@@ -12,11 +12,19 @@ function toSsml(text) {
     .replace(/\. /g, '. <break time="800ms"/> ');
 }
 
+// Versione scritta (scheda nell'app Alexa): un piatto per riga.
+function toCard(text) {
+  return text
+    .replace(/(mangiato|mangerà): /g, '$1:\n')
+    .replace(/ - /g, '\n')
+    .replace(/\. /g, '.\n\n');
+}
+
 function menuResponse(handlerInput) {
   const speech = speechFor();
   return handlerInput.responseBuilder
     .speak(toSsml(speech))
-    .withSimpleCard(TITLE, speech)
+    .withSimpleCard(TITLE, toCard(speech))
     .withShouldEndSession(true)
     .getResponse();
 }
