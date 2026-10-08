@@ -136,6 +136,32 @@ dell'app Alexa.
 
 Se invece cambi `it-IT.json` (nome o frasi), rifai il punto 3 (Save + Build skill).
 
+## Aggiornare la skill da riga di comando (ASK CLI)
+
+In alternativa al copia-incolla in console, ogni skill Alexa-hosted ha un repository git su Amazon:
+un `git push` sul branch `master` esegue il Deploy da solo.
+
+1. Installa ASK CLI (serve Node.js): `npm install -g ask-cli`
+2. Collega l'account Amazon Developer: `ask configure --no-browser`. Apri il link stampato, fai
+   login, incolla l'Authorization Code. Alla domanda sull'account AWS rispondi **No**.
+3. Trova l'ID della skill: `ask smapi list-skills-for-vendor`
+4. Scarica la skill: `ask init --hosted-skill-id <ID della skill>` (crea una cartella con `lambda/`
+   e `skill-package/`, già collegata al repository git di Amazon).
+5. Copia lì i file modificati (`lambda/menu.js`, `lambda/index.js`,
+   `skill-package/interactionModels/custom/it-IT.json`), poi:
+
+   ```sh
+   git add -A && git commit -m "Aggiorna menu" && git push origin master
+   ```
+
+   Il push esegue il Deploy del codice e, se è cambiato, la Build del modello.
+6. Prova senza Echo:
+
+   ```sh
+   ask smapi simulate-skill -s <ID della skill> -g development --input-content "apri menu mensa" --device-locale it-IT
+   ask smapi get-skill-simulation -s <ID della skill> -g development -i <id restituito dal comando precedente>
+   ```
+
 ## Problemi frequenti
 
 | Sintomo | Causa | Soluzione |
