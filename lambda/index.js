@@ -3,10 +3,19 @@ const { speechFor } = require('./menu');
 
 const TITLE = 'Menu Mensa';
 
+// Versione parlata: pause brevi tra i piatti, più lunghe tra le frasi.
+function toSsml(text) {
+  return text
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/: /g, ': <break time="300ms"/>')
+    .replace(/ - /g, ' <break time="400ms"/> ')
+    .replace(/\. /g, '. <break time="800ms"/> ');
+}
+
 function menuResponse(handlerInput) {
   const speech = speechFor();
   return handlerInput.responseBuilder
-    .speak(speech)
+    .speak(toSsml(speech))
     .withSimpleCard(TITLE, speech)
     .withShouldEndSession(true)
     .getResponse();
