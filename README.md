@@ -174,4 +174,8 @@ un `git push` sul branch `master` esegue il Deploy da solo.
 
 ---
 
+## Licenza
+
+MIT, vedi [LICENSE](LICENSE).
+
 Made with love ❤️ - [DLLFPP](https://buymeacoffee.com/dllfpp)
